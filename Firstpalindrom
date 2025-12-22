@@ -1,0 +1,15 @@
+char* firstPalindrome(char** words, int wordsSize) {
+    bool isPalindrome(char* s) {
+    int l = 0, r = strlen(s) - 1;
+    while (l < r) {
+        if (s[l++] != s[r--])
+            return false;
+    }
+    return true;
+}
+    for (int i = 0; i < wordsSize; i++) {
+        if (isPalindrome(words[i]))
+            return words[i];
+    }
+    return "";
+}
